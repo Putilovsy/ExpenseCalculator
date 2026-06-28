@@ -19,15 +19,16 @@ public class Transaction
     @Column(name = "timestamp")
     private LocalDateTime timestamp;
 
-    @Column(name = "event_id")
+    @ManyToOne
+    @JoinColumn(name = "event_id")
     private Event event;
 
     @ManyToOne
-    @Column(name = "sender_id")
+    @JoinColumn(name = "sender_id")
     private Participant sender;
 
     @ManyToOne
-    @Column(name = "receiver_id")
+    @JoinColumn(name = "receiver_id")
     private Participant receiver;
 
     public Transaction(){}
