@@ -32,7 +32,7 @@ public class Purchase
     @JoinColumn(name = "buyer_id")
     private Participant buyer;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "purchase_consumers",
             joinColumns = @JoinColumn(name = "purchase_id"),

@@ -45,4 +45,18 @@ public class Participant
     public String toString() {
         return("Participant{Id: " + id + ", Name: " + name + ", headcount: " + headcount + "}");
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Participant that = (Participant) o;
+        return java.util.Objects.equals(getId(), that.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(getId());
+    }
 }
